@@ -24,10 +24,10 @@ require_once('psy-core/base/BaseCommon.class.php');
  * <hr />
  * <b>Examples</b><br />
  * 1) sending a very simple eMail in one shot<br />
- * if(false !== $eMail_obj = new eMail('jesse@psy-core.com', 'geoff@plan8studios.com', 'hey, whats up?', 'this is a test email!! -geoff', true)) { echo('email should have sent and returned true'); }<br />
+ * if(false !== $eMail_obj = new eMail('jquattlebaum@streamliningit.com', 'psyjoniz@gmail.com', 'hey, whats up?', 'this is a test email!! -psyjoniz', true)) { echo('email should have sent and returned true'); }<br />
  * 2) setting up the object then manually building the eMails parts and telling the object to send<br />
  * $eMail =& Core::getObj('eMail');<br />
- * $eMail->setTo('jesse@psy-core.com', 'Jesse Quattlebaum'); //can be called setTo('email');<br />
+ * $eMail->setTo('jquattlebaum@streamliningit.com', 'Jesse Quattlebaum'); //can be called setTo('email');<br />
  * $eMail->addRecipient('psyjoniz@gmail.com',    'CC',  'Jesse Quattlebaum'); //can be called addRecipient('email', 'rcp_type') or just addRecipient('email')<br />
  * $eMail->addRecipient('psyjoniz@psyjoniz.com', 'BCC', 'Jesse Quattlebaum');<br />
  * $eMail->setFrom('AutoMailer@psy-core.com', 'psy-core AutoMailer');<br />
@@ -37,7 +37,7 @@ require_once('psy-core/base/BaseCommon.class.php');
  * $eMail->send();<br />
  * 3) sending multiple eMails with one object first by manually building the eMail then by using the start function to kick off a simplistic second eMail<br />
  * $eMail =& Core::getObj('eMail');<br />
- * $eMail->setTo('jesse@psy-core.com', 'Jesse Quattlebaum'); //can be called setTo('email');<br />
+ * $eMail->setTo('jquattlebaum@streamliningit.com', 'Jesse Quattlebaum'); //can be called setTo('email');<br />
  * $eMail->addRecipient('psyjoniz@gmail.com',    'CC',  'Jesse Quattlebaum'); //can be called addRecipient('email', 'rcp_type') or just addRecipient('email')<br />
  * $eMail->addRecipient('psyjoniz@psyjoniz.com', 'BCC', 'Jesse Quattlebaum');<br />
  * $eMail->setFrom('AutoMailer@psy-core.com', 'psy-core AutoMailer');<br />
@@ -49,7 +49,7 @@ require_once('psy-core/base/BaseCommon.class.php');
  * $eMail->addAddachment('/file/on/server');<br />
  * $eMail->send();<br />
  * @package psy-core
- * @author psyjoniz (jesse@streamliningit.com)
+ * @author psyjoniz (jquattlebaum@streamliningit.com)
  * @version 1
  */
 class eMail extends BaseCommon {

@@ -8,33 +8,31 @@ Examples of Use :
 
 1) sending a very simple eMail in one shot :
 
-if(false !== $eMail_obj = new eMail('jesse@psy-core.com', 'geoff@plan8studios.com', 'hey, whats up?', 'this is a test email!! -geoff', true)) { echo('email should have sent and returned true'); }
+if(false !== $eMail_obj = new eMail('to@domain.com', 'from@domain.com', 'subject', 'body', true)) { echo('email should have sent and returned true'); }
 
-2) setting up the object then manually building the eMails parts and telling
-the object to send :
-
-$eMail =& Core::getObj('eMail');
-$eMail->setTo('jesse@psy-core.com', 'Jesse Quattlebaum'); //can be called setTo('email');
-$eMail->addRecipient('psyjoniz@gmail.com',    'CC',  'Jesse Quattlebaum'); //can be called addRecipient('email', 'rcp_type') or just addRecipient('email')
-$eMail->addRecipient('psyjoniz@psyjoniz.com', 'BCC', 'Jesse Quattlebaum');
-$eMail->setFrom('AutoMailer@psy-core.com', 'psy-core AutoMailer');
-$eMail->setSubject('This is a test email.');
-$eMail->setBody('a test of html, image extraction and embedding those images: <img src="http://www.psyjoniz.com/.images/photography_icon.gif"> (should be a camera icon)');
-$eMail->addAttachment('http://www.psyjoniz.com/.images/NLightEnd_finished.jpg');
-$eMail->send();
-
-3) sending multiple eMails with one object first by manually building the
-eMail then by using the start function to kick off a simplistic second eMail :
+2) setting up the object then manually building the eMails' parts and telling the object to send :
 
 $eMail =& Core::getObj('eMail');
-$eMail->setTo('jesse@psy-core.com', 'Jesse Quattlebaum'); //can be called setTo('email');
-$eMail->addRecipient('psyjoniz@gmail.com',    'CC',  'Jesse Quattlebaum'); //can be called addRecipient('email', 'rcp_type') or just addRecipient('email')
-$eMail->addRecipient('psyjoniz@psyjoniz.com', 'BCC', 'Jesse Quattlebaum');
-$eMail->setFrom('AutoMailer@psy-core.com', 'psy-core AutoMailer');
+$eMail->setTo('to@domain.com', 'To Name'); //can be called setTo('email');
+$eMail->addRecipient('recipient1@domain.com', 'CC', 'Recipient 1 Name'); //can be called addRecipient('email', 'rcp_type') or just addRecipient('email')
+$eMail->addRecipient('recipient2@domain.com', 'BCC', 'Recipient 2 Name');
+$eMail->setFrom('from@domain.com', 'From Name');
 $eMail->setSubject('This is a test email.');
-$eMail->setBody('a test of html, image extraction and embedding those images: <img src="http://www.psyjoniz.com/.images/photography_icon.gif"> (should be a camera icon)');
-$eMail->addAttachment('http://www.psyjoniz.com/.images/NLightEnd_finished.jpg');
+$eMail->setBody('a test of html, image extraction and embedding those images: <img src="http://www.domain.com/path/to/a/funny.gif">');
+$eMail->addAttachment('http://www.domain.com/path/to/a/relevant.doc');
 $eMail->send();
-$eMail->start('to_email@wherever.com', 'from_email@somewhere.net', 'the subject', 'and body of email');
-$eMail->addAddachment('/file/on/server');
+
+3) sending multiple eMails with one object first by manually building the eMail then by using the start function to kick off a simplistic second eMail :
+
+$eMail =& Core::getObj('eMail');
+$eMail->setTo('to@domain.com', 'To Name'); //can be called setTo('email');
+$eMail->addRecipient('recipient1@domain.com', 'CC', 'Recipient 1 Name'); //can be called addRecipient('email', 'rcp_type') or just addRecipient('email')
+$eMail->addRecipient('recipient2@domain.com', 'BCC', 'Recipient 2 Name');
+$eMail->setFrom('from@domain.com', 'From Name');
+$eMail->setSubject('This is a test email.');
+$eMail->setBody('a test of html, image extraction and embedding those images: <img src="http://www.domain.com/path/to/a/funny.gif">');
+$eMail->addAttachment('http://www.domain.com/path/to/a/relevant.doc');
+$eMail->send();
+$eMail->start('to@domain.com', 'from@domain.com', 'subject', 'body');
+$eMail->addAddachment('/local/path/to/a/relevant.doc');
 $eMail->send();

@@ -21,33 +21,6 @@ require_once('classes/Path.class.php');
  * 2007.6.28 - psyjoniz - got the sockets working, kindof.  but for some resaon the body isn't being included.  thats kindof a problem ;)
  * 2007.7.6 - psyjoniz - finished the socket connection with all parts of email working properly; extending BaseCommon
  * * this version (1) is the first production version capable of sending with mail() or direct-to-socket methodologies and extends BaseCommon
- * <hr />
- * <b>Examples</b><br />
- * 1) sending a very simple eMail in one shot<br />
- * if(false !== $eMail_obj = new eMail('to@domain.com', 'from@domain.com', 'subject', 'body', true)) { echo('email should have sent and returned true'); }<br />
- * 2) setting up the object then manually building the eMails parts and telling the object to send<br />
- * $eMail =& Core::getObj('eMail');<br />
- * $eMail->setTo('to@domain.com', 'To Name'); //can be called setTo('email');<br />
- * $eMail->addRecipient('recipient1@domain.com',    'CC',  'Recipient 1 Name'); //can be called addRecipient('email', 'rcp_type') or just addRecipient('email')<br />
- * $eMail->addRecipient('recipient2@domain.com', 'BCC', 'Recipient 2 Name');<br />
- * $eMail->setFrom('from@domain.com', 'From Name');<br />
- * $eMail->setSubject('This is a test email.');<br />
- * $eMail->setBody('a test of html, image extraction and embedding those images: <img src="http://www.domain.com/path/to/a/funny.gif">');<br />
- * $eMail->addAttachment('http://www.domain.com/path/to/relevant.doc');<br />
- * $eMail->send();<br />
- * 3) sending multiple eMails with one object first by manually building the eMail then by using the start function to kick off a simplistic second eMail<br />
- * $eMail =& Core::getObj('eMail');<br />
- * $eMail->setTo('to@domain.com', 'To Name'); //can be called setTo('email');<br />
- * $eMail->addRecipient('recipient1@domain.com',    'CC',  'Recipient 1 Name'); //can be called addRecipient('email', 'rcp_type') or just addRecipient('email')<br />
- * $eMail->addRecipient('recipient2@domain.com', 'BCC', 'Recipient 2 Name');<br />
- * $eMail->setFrom('from@domain.com', 'From Name');<br />
- * $eMail->setSubject('This is a test email.');<br />
- * $eMail->setBody('a test of html, image extraction and embedding those images: <img src="http://www.domain.com/path/to/a/funny.gif">');<br />
- * $eMail->addAttachment('http://www.domain.com/path/to/a/relevant.doc');<br />
- * $eMail->send();<br />
- * $eMail->start('to@domain.com', 'from@domain.com', 'subject', 'body');<br />
- * $eMail->addAddachment('/local/path/to/relevant.doc');<br />
- * $eMail->send();<br />
  * @package psy-core
  * @author psyjoniz (psyjoniz@gmail.com)
  * @version 1

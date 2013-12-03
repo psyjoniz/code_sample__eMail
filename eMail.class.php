@@ -116,7 +116,7 @@ class eMail {
 	 * @since Version 0.00 alpha
 	 * @version 0.00 alpha
 	 */
-	function __construct($to = false, $from = false, $subject = false, $body = false, $send = false) { //BEGIN __construct
+	function __construct($to = false, $from = false, $subject = false, $body = false, $send = false) {
 		
 
 		$this->start($to, $from, $subject, $body);
@@ -127,7 +127,7 @@ class eMail {
 		
 		return true;
 
-	} //END __construct
+	}
 	
 	function setDebug($tf) {
 		if(false === $tf || true === $tf) {
@@ -789,5 +789,4 @@ class eMail {
 		$this->attach_parts  = array();
 		return true;
 	}
-	
 }
